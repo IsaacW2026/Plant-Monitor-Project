@@ -65,3 +65,8 @@ def CheckMoisture(): #Function to check if it needs watering
 
 def IsReserviorEmpty(): #Function to return whether or not the reservior has water
     return reserviorEmpty
+
+def plant_care_loop(interval=3600): #Function that will run concurrently every hour to check if the plant needs watering
+    while True:
+        CheckMoisture()
+        time.sleep(interval)
